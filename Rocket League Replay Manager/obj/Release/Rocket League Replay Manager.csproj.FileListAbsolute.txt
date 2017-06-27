@@ -1,0 +1,10 @@
+E:\Stuff\ALL CODING STUFF\Visual Studio Stuff\Rocket League Replay Manager\Rocket League Replay Manager\bin\Release\Rocket League Replay Manager.exe.config
+E:\Stuff\ALL CODING STUFF\Visual Studio Stuff\Rocket League Replay Manager\Rocket League Replay Manager\bin\Release\Rocket League Replay Manager.exe
+E:\Stuff\ALL CODING STUFF\Visual Studio Stuff\Rocket League Replay Manager\Rocket League Replay Manager\bin\Release\Rocket League Replay Manager.pdb
+E:\Stuff\ALL CODING STUFF\Visual Studio Stuff\Rocket League Replay Manager\Rocket League Replay Manager\bin\Release\Bunifu_UI_v1.5.3.dll
+E:\Stuff\ALL CODING STUFF\Visual Studio Stuff\Rocket League Replay Manager\Rocket League Replay Manager\obj\Release\Rocket_League_Replay_Manager.Main.resources
+E:\Stuff\ALL CODING STUFF\Visual Studio Stuff\Rocket League Replay Manager\Rocket League Replay Manager\obj\Release\Rocket_League_Replay_Manager.Properties.Resources.resources
+E:\Stuff\ALL CODING STUFF\Visual Studio Stuff\Rocket League Replay Manager\Rocket League Replay Manager\obj\Release\Rocket League Replay Manager.csproj.GenerateResource.Cache
+E:\Stuff\ALL CODING STUFF\Visual Studio Stuff\Rocket League Replay Manager\Rocket League Replay Manager\obj\Release\Rocket League Replay Manager.exe
+E:\Stuff\ALL CODING STUFF\Visual Studio Stuff\Rocket League Replay Manager\Rocket League Replay Manager\obj\Release\Rocket League Replay Manager.pdb
+E:\Stuff\ALL CODING STUFF\Visual Studio Stuff\Rocket League Replay Manager\Rocket League Replay Manager\obj\Release\Rocket League Replay Manager.csprojResolveAssemblyReference.cache
