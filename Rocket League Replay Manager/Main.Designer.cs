@@ -53,33 +53,33 @@
             this.img_RLPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img_RLPic.TabIndex = 0;
             this.img_RLPic.TabStop = false;
-            this.img_RLPic.Click += new System.EventHandler(this.RLPic_Click);
-            this.img_RLPic.MouseEnter += new System.EventHandler(this.RLPic_MouseEnter);
-            this.img_RLPic.MouseLeave += new System.EventHandler(this.img_RLPic_MouseLeave);
+            this.img_RLPic.MouseDown += new System.Windows.Forms.MouseEventHandler(this.img_RLPic_MouseDown);
             // 
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(35)))), ((int)(((byte)(38)))));
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Tele-Marines", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Silver;
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(44, 48);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(167, 44);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(124, 55);
             this.bunifuCustomLabel1.TabIndex = 1;
             this.bunifuCustomLabel1.Text = "RLR";
+            this.bunifuCustomLabel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bunifuCustomLabel1_MouseDown);
             // 
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(35)))), ((int)(((byte)(38)))));
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Silver;
             this.bunifuCustomLabel2.Location = new System.Drawing.Point(459, 58);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(243, 30);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(150, 37);
             this.bunifuCustomLabel2.TabIndex = 2;
             this.bunifuCustomLabel2.Text = "Manager";
+            this.bunifuCustomLabel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bunifuCustomLabel2_MouseDown);
             // 
             // panel1
             // 
@@ -101,7 +101,7 @@
             this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExport.DisabledColor = System.Drawing.Color.Gray;
             this.btnExport.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnExport.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnExport.Iconimage")));
+            this.btnExport.Iconimage = null;
             this.btnExport.Iconimage_right = null;
             this.btnExport.Iconimage_right_Selected = null;
             this.btnExport.Iconimage_Selected = null;
@@ -129,6 +129,7 @@
             // btnImport
             // 
             this.btnImport.Activecolor = System.Drawing.Color.Silver;
+            this.btnImport.AllowDrop = true;
             this.btnImport.BackColor = System.Drawing.Color.Silver;
             this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnImport.BorderRadius = 0;
@@ -136,7 +137,7 @@
             this.btnImport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImport.DisabledColor = System.Drawing.Color.Gray;
             this.btnImport.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnImport.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnImport.Iconimage")));
+            this.btnImport.Iconimage = null;
             this.btnImport.Iconimage_right = null;
             this.btnImport.Iconimage_right_Selected = null;
             this.btnImport.Iconimage_Selected = null;
@@ -160,6 +161,7 @@
             this.btnImport.Textcolor = System.Drawing.Color.White;
             this.btnImport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            this.btnImport.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnImport_DragDrop);
             // 
             // txtReplayDirectory
             // 
@@ -169,7 +171,7 @@
             this.txtReplayDirectory.BorderColorMouseHover = System.Drawing.Color.Gray;
             this.txtReplayDirectory.BorderThickness = 3;
             this.txtReplayDirectory.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtReplayDirectory.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtReplayDirectory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtReplayDirectory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtReplayDirectory.isPassword = false;
             this.txtReplayDirectory.Location = new System.Drawing.Point(13, 174);

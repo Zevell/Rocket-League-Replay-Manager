@@ -8,6 +8,7 @@ namespace Rocket_League_Replay_Manager
 {
     public partial class Main : Form
     {
+        string RLDemoDir;
         string[] fileNames = new string[500];
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -22,7 +23,7 @@ namespace Rocket_League_Replay_Manager
             InitializeComponent();
             try
             {
-                string RLDemoDir = Environment.ExpandEnvironmentVariables(txtReplayDirectory.Text + "\\");
+                RLDemoDir = Environment.ExpandEnvironmentVariables(txtReplayDirectory.Text + "\\");
                 int i = 0;
 
                 foreach (string file in Directory.EnumerateFiles(RLDemoDir, "*.replay"))
@@ -164,27 +165,67 @@ namespace Rocket_League_Replay_Manager
             catch { }
         }
 
-        private async void btnImport_Click(object sender, EventArgs e)
+        private void btnImport_Click(object sender, EventArgs e)
         {
             try
             {
-                string RLDemoDir = Environment.ExpandEnvironmentVariables(txtReplayDirectory.Text + "\\");
-
+                RLDemoDir = Environment.ExpandEnvironmentVariables(txtReplayDirectory.Text + "\\");
                 OpenFileDialog openFileDialog1 = new OpenFileDialog();
                 openFileDialog1.Filter = "Replay Files|*.replay";
                 openFileDialog1.Title = "Select a Replay File";
 
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    AnimateProgress(100, 1, true);
-                    File.Copy(openFileDialog1.FileName, RLDemoDir + Path.GetFileName(openFileDialog1.FileName), true);
-                    await Task.Delay(600);
-
-                    lblFileCopied.Text = Path.GetFileName(openFileDialog1.FileName) + " imported to Rocket League";
-                    lblFileCopied.Visible = true;
+                    importReplays(openFileDialog1.FileName);
                 }
             }
             catch { }
+        }
+
+        private async void importReplays(String replay)
+        {
+            try
+            {
+                AnimateProgress(100, 1, true);
+                File.Copy(replay, RLDemoDir + Path.GetFileName(replay), true);
+                await Task.Delay(600);
+                lblFileCopied.Text = Path.GetFileName(replay) + " imported to Rocket League";
+                lblFileCopied.Visible = true;
+            }
+           catch { }
+        }
+
+        private void btnImport_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string file in files) importReplays(file);
+        }
+
+        private void img_RLPic_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void bunifuCustomLabel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void bunifuCustomLabel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 }
