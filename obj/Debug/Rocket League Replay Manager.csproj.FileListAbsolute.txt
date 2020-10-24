@@ -1,0 +1,15 @@
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\obj\Debug\Rocket League Replay Manager.csprojAssemblyReference.cache
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\obj\Debug\MainWindow.g.cs
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\obj\Debug\App.g.cs
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\obj\Debug\Rocket League Replay Manager_MarkupCompile.cache
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\obj\Debug\Rocket League Replay Manager_MarkupCompile.lref
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\bin\Debug\Rocket League Replay Manager.exe.config
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\bin\Debug\Rocket League Replay Manager.exe
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\bin\Debug\Rocket League Replay Manager.pdb
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\obj\Debug\MainWindow.baml
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\obj\Debug\Rocket League Replay Manager.g.resources
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\obj\Debug\Rocket_League_Replay_Manager.Properties.Resources.resources
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\obj\Debug\Rocket League Replay Manager.csproj.GenerateResource.cache
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\obj\Debug\Rocket League Replay Manager.csproj.CoreCompileInputs.cache
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\obj\Debug\Rocket League Replay Manager.exe
+C:\Users\zeval\source\repos\Rocket League Replay Manager\Rocket League Replay Manager\obj\Debug\Rocket League Replay Manager.pdb

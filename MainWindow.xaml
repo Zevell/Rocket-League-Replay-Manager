@@ -1,0 +1,16 @@
+﻿<Window x:Name="frm_main" x:Class="Rocket_League_Replay_Manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rocket_League_Replay_Manager"
+        mc:Ignorable="d"
+        Title="Rocket League Replay Manager - To import just drag and drop!" Height="450" Width="680.483" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" AllowDrop="True" Drop="frm_main_Drop">
+    <Grid Margin="0,0,4,0">
+        <ListBox x:Name="listbox_replays" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="517"/>
+        <Button x:Name="btn_export" Content="Export" HorizontalAlignment="Left" Margin="532,10,0,0" VerticalAlignment="Top" Width="128" Height="37" Click="btn_export_Click"/>
+        <TextBox x:Name="txt_info" HorizontalAlignment="Left" Height="23" Margin="532,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" IsEnabled="False"/>
+        <Button x:Name="btn_refresh" Content="Refresh" HorizontalAlignment="Left" Margin="532,52,0,0" VerticalAlignment="Top" Width="128" Height="37" Click="btn_refresh_Click"/>
+
+    </Grid>
+</Window>
