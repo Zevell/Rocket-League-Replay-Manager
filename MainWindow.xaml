@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Rocket_League_Replay_Manager"
         mc:Ignorable="d"
-        Title="Rocket League Replay Manager - To import just drag and drop!" Height="450" Width="680.483" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" AllowDrop="True" Drop="frm_main_Drop">
+        Title="Rocket League Replay Manager - To import just drag and drop!" Height="450" Width="680.483" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" AllowDrop="True" Drop="frm_main_Drop" Background="White">
     <Grid Margin="0,0,4,0">
         <ListBox x:Name="listbox_replays" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="517"/>
         <Button x:Name="btn_export" Content="Export" HorizontalAlignment="Left" Margin="532,10,0,0" VerticalAlignment="Top" Width="128" Height="37" Click="btn_export_Click"/>
