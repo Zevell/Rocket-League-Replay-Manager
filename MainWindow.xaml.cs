@@ -17,20 +17,35 @@ namespace Rocket_League_Replay_Manager
             InitializeComponent();
             // Let the user know we are loading the replays, and call the function to do so.
             txt_info.Text = "Loading";
-            loadReplays();
+            Loaded += formLoaded;
         }
 
+        private void formLoaded(object sender, RoutedEventArgs e)
+        {
+            loadReplays();
+        }
         private void loadReplays() // Function to load the replays from the default directory containing them
         {
             try
             {
                 Debug.WriteLine("Loading replays");
-                string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-                string AccountName = Environment.UserName.ToLower(); // profile username used to find the "my documents" folder specific to the user.
-                replayDir = "C:\\Users\\" + AccountName + "\\Documents\\My Games\\Rocket League\\TAGame\\Demos\\";
+                replayDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\My Games\\Rocket League\\TAGame\\Demos\\";
+                Debug.WriteLine("Replay Directory: " + replayDir);
 
-                var sortedFiles = new DirectoryInfo(replayDir).GetFiles().OrderByDescending(f => f.LastWriteTime).ToList(); // Order the list so the latest modified file is shown at the top.
-                sortedFiles.ForEach(f => listbox_replays.Items.Add(f.Name.Replace(".replay", "") + " - " + f.LastWriteTime)); // Clean the file names before importing them into the list.
+                var sortedFiles = new DirectoryInfo(replayDir).GetFiles("*.replay").OrderByDescending(f => f.LastWriteTime).ToList(); // Order the list so the last modified file is shown at the top.
+
+                int i = 0;
+                foreach (FileInfo file in sortedFiles) // Clean the file names, and fetch them using RocketLeagueReplayParser. If none exist, use the file name instead.
+                {
+                    string finalName = "";
+                    try
+                    {
+                        finalName = RocketLeagueReplayParser.Replay.Deserialize(replayDir + file.Name).Properties["ReplayName"].Value.ToString();
+                    } catch { }
+                    if (finalName == "") finalName = file.Name.Replace(".replay", "");
+                    listbox_replays.Items.Add(finalName + " - " + file.LastWriteTime);
+                    i += 1;
+                }
                 Debug.WriteLine("Loaded replays");
                 txt_info.Text = "Loaded replays";
             } catch(SystemException err)
@@ -40,14 +55,16 @@ namespace Rocket_League_Replay_Manager
             
         }
 
-        private void btn_export_Click(object sender, RoutedEventArgs e)
+        public void btn_export_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 if (listbox_replays.SelectedIndex != -1 && replayDir != null)
                 {
                     Debug.WriteLine("Copying replay to desktop");
-                    File.Copy($"{replayDir}{listbox_replays.SelectedItem.ToString().Split('-')[0].Trim()}.replay", $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{listbox_replays.SelectedItem.ToString().Split('-')[0].Trim()}.replay"); // Get the filename from the selected list item, remove unnecessary clutter, and copy the file to the desktop.
+                    var sortedFiles = new DirectoryInfo(replayDir).GetFiles("*.replay").OrderByDescending(f => f.LastWriteTime).ToList(); // Order the list so the last modified file is shown at the top.
+                    string fileName = sortedFiles[listbox_replays.SelectedIndex].Name;
+                    File.Copy($"{replayDir}{fileName}", $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{fileName}"); // Get the filename from the selected list item, remove unnecessary clutter, and copy the file to the desktop.
                     txt_info.Text = "Exported to desktop";
                     Debug.WriteLine("Copied replay to desktop");
                 }
